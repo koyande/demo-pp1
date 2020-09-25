@@ -8,17 +8,17 @@
       steps {
           sh 'terraform init'
           sh """
-          export TF_VAR_okta_user_first_name=${params.UserFirstName}
-          export TF_VAR_okta_user_last_name=${params.UserLastName}
-          export TF_VAR_okta_user_login=${params.UserLogin}
-          export TF_VAR_okta_user_email=${params.UserEmail}
-          export TF_VAR_okta_group_name=${params.GroupName}
-          export TF_VAR_group_description=${params.GroupDescription}
-          export TF_VAR_okta_auth_server_name=${params.ServerName}
-          export TF_VAR_okta_auth_server_description=${params.ServerDescription}
-          export TF_VAR_okta_app_saml_label=${params.SamlLabel}
-          export TF_VAR_okta_inline_hook_name=${params.HookName}
-          export TF_VAR_okta_idp_social_name=${params.IdpName}
+          export TF_VAR_okta_user_first_name=${params.userfirstname}
+          export TF_VAR_okta_user_last_name=${params.userlastname}
+          export TF_VAR_okta_user_login=${params.userlogin}
+          export TF_VAR_okta_user_email=${params.useremail}
+          export TF_VAR_okta_group_name=${params.groupname}
+          export TF_VAR_group_description=${params.groupdescription}
+          export TF_VAR_okta_auth_server_name=${params.servername}
+          export TF_VAR_okta_auth_server_description=${params.serverdescription}
+          export TF_VAR_okta_app_saml_label=${params.samllabel}
+          export TF_VAR_okta_inline_hook_name=${params.hookname}
+          export TF_VAR_okta_idp_social_name=${params.idpname}
 
           
 
@@ -39,17 +39,17 @@
     stage('TF Apply') {
       steps {
           sh """
-          export TF_VAR_okta_user_first_name=${params.UserFirstName}
-          export TF_VAR_okta_user_last_name=${params.UserLastName}
-          export TF_VAR_okta_user_login=${params.UserLogin}
-          export TF_VAR_okta_user_email=${params.UserEmail}
-          export TF_VAR_okta_group_name=${params.GroupName}
-          export TF_VAR_group_description=${params.GroupDescription}
-          export TF_VAR_okta_auth_server_name=${params.ServerName}
-          export TF_VAR_okta_auth_server_description=${params.ServerDescription}
-          export TF_VAR_okta_app_saml_label=${params.SamlLabel}
-          export TF_VAR_okta_inline_hook_name=${params.HookName}
-          export TF_VAR_okta_idp_social_name=${params.IdpName}
+          export TF_VAR_okta_user_first_name=${params.userfirstname}
+          export TF_VAR_okta_user_last_name=${params.userlastname}
+          export TF_VAR_okta_user_login=${params.userlogin}
+          export TF_VAR_okta_user_email=${params.useremail}
+          export TF_VAR_okta_group_name=${params.groupname}
+          export TF_VAR_group_description=${params.groupdescription}
+          export TF_VAR_okta_auth_server_name=${params.servername}
+          export TF_VAR_okta_auth_server_description=${params.serverdescription}
+          export TF_VAR_okta_app_saml_label=${params.samllabel}
+          export TF_VAR_okta_inline_hook_name=${params.hookname}
+          export TF_VAR_okta_idp_social_name=${params.idpname}
           
           terraform apply -input=false -auto-approve myplan 
           """
